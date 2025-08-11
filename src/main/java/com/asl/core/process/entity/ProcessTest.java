@@ -1,6 +1,6 @@
-package {{package_base}}.{{module_name}}.entity;
+package com.asl.core.process.entity;
 
-import {{package_base}}.shared.Auditable;
+import com.asl.core.shared.Auditable;
 
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
@@ -15,8 +15,16 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class {{entity_name}} extends Auditable {
-{% for field in fields %}
-    private {{ field.type }} {{ field.name }};
-{% endfor %}
+public class ProcessTest extends Auditable {
+
+    private String name;
+
+    private String description;
+
+    private Integer duration;
+
+    private String status;
+
+    private Double cost;
+
 }

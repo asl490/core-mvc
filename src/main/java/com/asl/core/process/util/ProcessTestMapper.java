@@ -1,15 +1,15 @@
-package {{package_base}}.{{module_name}}.util;
+package com.asl.core.process.util;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.NullValuePropertyMappingStrategy;
 
-import {{package_base}}.{{module_name}}.entity.{{entity_name}};
-import {{package_base}}.shared.BaseMapper;
+import com.asl.core.process.entity.ProcessTest;
+import com.asl.core.shared.BaseMapper;
 
 @Mapper(componentModel = "spring", nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-public interface {{entity_name}}Mapper extends BaseMapper<{{entity_name}}, {{entity_name}}DTO, {{entity_name}}DTO.Create, {{entity_name}}DTO.Update> {
+public interface ProcessTestMapper extends BaseMapper<ProcessTest, ProcessTestDTO, ProcessTestDTO.Create, ProcessTestDTO.Update> {
 
     @Override
     @Mapping(target = "id", ignore = true)
@@ -18,7 +18,7 @@ public interface {{entity_name}}Mapper extends BaseMapper<{{entity_name}}, {{ent
     @Mapping(target = "createdBy", ignore = true)
     @Mapping(target = "lastModifiedBy", ignore = true)
     @Mapping(target = "isDeleted", ignore = true)
-    {{entity_name}} toEntity({{entity_name}}DTO.Create dto);
+    ProcessTest toEntity(ProcessTestDTO.Create dto);
 
     @Override
     @Mapping(target = "id", ignore = true)
@@ -27,6 +27,6 @@ public interface {{entity_name}}Mapper extends BaseMapper<{{entity_name}}, {{ent
     @Mapping(target = "createdBy", ignore = true)
     @Mapping(target = "lastModifiedBy", ignore = true)
     @Mapping(target = "isDeleted", ignore = true)
-    void updateEntityFromDTO({{entity_name}}DTO.Update dto, @MappingTarget {{entity_name}} entity);
+    void updateEntityFromDTO(ProcessTestDTO.Update dto, @MappingTarget ProcessTest entity);
 
 }

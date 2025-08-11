@@ -34,6 +34,8 @@ build/
 logs/backend.log
 logs/
 
+codegen/
+
 ### dev files ###
 *-dev.yaml
 *-dev.properties
