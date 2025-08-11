@@ -1,0 +1,22 @@
+package {{package_base}}.{{module_name}}.entity;
+
+import {{package_base}}.shared.Auditable;
+
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
+
+@Data
+@Entity
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode(callSuper = true)
+public class {{entity_name}} extends Auditable {
+{% for field in fields %}
+    private {{ field.type }} {{ field.name }};
+{% endfor %}
+}

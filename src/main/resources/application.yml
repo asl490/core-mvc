@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: asl-backend
+
+  profiles:
+    active: dev
+
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=asl;trustServerCertificate=true;
+    username: sa
+    password: mcsc25
+    # url: jdbc:postgresql://localhost:5432/hexagonal_db
+    # username: ${DB_USERNAME:hexagonal_user}
+    # password: ${DB_PASSWORD:hexagonal_pass}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+  main:
+    allow-circular-references: true
+
+  security:
+    jwt:
+      secret: ThisIsAReallyLongAndSecureSecretKeyForJWTSigningThatIsMoreThan256Bits
+      expiration: 600000 # 10 minutes in milliseconds
+      refresh-expiration: 604800000 # 7 days in milliseconds
+
+  #   flyway:
+  #     enabled: true
+  #     baseline-on-migrate: true
+  #     locations: classpath:db/migration
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus,logfile
+  endpoint:
+    health:
+      show-details: when-authorized
+
+logging:
+  file:
+    name: logs/backend.log
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+
+server:
+  port: 6969
+  servlet:
+    context-path: /api/v1
+  error:
+    include-message: always
+    include-binding-errors: always
