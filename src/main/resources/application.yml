@@ -1,17 +1,14 @@
 spring:
   application:
-    name: asl-backend
+    name: core-backend
 
   profiles:
     active: dev
 
   datasource:
-    url: jdbc:sqlserver://localhost:1433;databaseName=asl;trustServerCertificate=true;
-    username: sa
-    password: mcsc25
-    # url: jdbc:postgresql://localhost:5432/hexagonal_db
-    # username: ${DB_USERNAME:hexagonal_user}
-    # password: ${DB_PASSWORD:hexagonal_pass}
+    url:
+    username:
+    password:
 
   jpa:
     hibernate:
@@ -24,20 +21,15 @@ spring:
 
   security:
     jwt:
-      secret: ThisIsAReallyLongAndSecureSecretKeyForJWTSigningThatIsMoreThan256Bits
+      secret:
       expiration: 600000 # 10 minutes in milliseconds
       refresh-expiration: 604800000 # 7 days in milliseconds
-
-  #   flyway:
-  #     enabled: true
-  #     baseline-on-migrate: true
-  #     locations: classpath:db/migration
 
 management:
   endpoints:
     web:
       exposure:
-        include: health,info,metrics,prometheus,logfile
+        include:
   endpoint:
     health:
       show-details: when-authorized

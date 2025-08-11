@@ -33,3 +33,8 @@ build/
 .vscode/
 logs/backend.log
 logs/
+
+### dev files ###
+*-dev.yaml
+*-dev.properties
+*-dev.yml
