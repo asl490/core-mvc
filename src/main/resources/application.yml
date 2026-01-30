@@ -24,7 +24,8 @@ spring:
       secret:
       expiration: 600000 # 10 minutes in milliseconds
       refresh-expiration: 604800000 # 7 days in milliseconds
-
+springdoc:
+  default-produces-media-type: application/json
 management:
   endpoints:
     web:
